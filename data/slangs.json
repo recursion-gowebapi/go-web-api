@@ -1,0 +1,1147 @@
+[
+  {
+    "id": "slang_001",
+    "slang": "lit",
+    "meanings": [
+      {
+        "meaning_ja": "最高に楽しい、盛り上がっている",
+        "nuance_ja": "イベントや雰囲気がとても楽しい時に使うカジュアルな褒め言葉です。",
+        "examples": [
+          {
+            "sentence_en": "The party was lit last night.",
+            "sentence_ja": "昨夜のパーティーは最高に盛り上がっていた。"
+          }
+        ],
+        "scene": [
+          "friends",
+          "sns",
+          "party"
+        ],
+        "emotion_categories": [
+          "excited",
+          "joy"
+        ],
+        "warning_ja": "フォーマルな場面では軽すぎる表現なので、仕事の報告や目上の人との会話では使わない方が自然です。"
+      }
+    ]
+  },
+  {
+    "id": "slang_002",
+    "slang": "sus",
+    "meanings": [
+      {
+        "meaning_ja": "怪しい、疑わしい",
+        "nuance_ja": "人や状況に対して、何かおかしいと感じた時に軽くツッコむ表現です。",
+        "examples": [
+          {
+            "sentence_en": "He said he forgot his wallet again. That's sus.",
+            "sentence_ja": "彼、また財布を忘れたって言ってたよ。怪しいね。"
+          }
+        ],
+        "scene": [
+          "friends",
+          "gaming",
+          "sns"
+        ],
+        "emotion_categories": [
+          "confusion",
+          "fear"
+        ],
+        "warning_ja": "本気で相手を犯罪者扱いするように聞こえる場合があるため、冗談の文脈がない時は注意してください。"
+      }
+    ]
+  },
+  {
+    "id": "slang_003",
+    "slang": "mid",
+    "meanings": [
+      {
+        "meaning_ja": "微妙、普通すぎる",
+        "nuance_ja": "期待したほど良くないものに対して、強くはないが否定的に評価する表現です。",
+        "examples": [
+          {
+            "sentence_en": "Everyone hyped that movie up, but it was mid.",
+            "sentence_ja": "みんなその映画を持ち上げてたけど、微妙だった。"
+          }
+        ],
+        "scene": [
+          "review",
+          "sns",
+          "friends"
+        ],
+        "emotion_categories": [
+          "disappointment",
+          "negative"
+        ],
+        "warning_ja": "人の作品や好みに対して使うと失礼に聞こえやすいので、相手が好きなものを直接けなす時は避けてください。"
+      }
+    ]
+  },
+  {
+    "id": "slang_004",
+    "slang": "vibe",
+    "meanings": [
+      {
+        "meaning_ja": "雰囲気、感じ",
+        "nuance_ja": "場所、人、音楽などから受ける感覚的な印象を表します。",
+        "examples": [
+          {
+            "sentence_en": "This cafe has such a chill vibe.",
+            "sentence_ja": "このカフェ、すごく落ち着いた雰囲気があるね。"
+          }
+        ],
+        "scene": [
+          "daily_conversation",
+          "sns",
+          "review"
+        ],
+        "emotion_categories": [
+          "positive",
+          "chill"
+        ],
+        "warning_ja": "具体的な説明が必要な場面で vibe だけを使うと曖昧すぎるため、ビジネス文書では別の表現を使ってください。"
+      },
+      {
+        "meaning_ja": "気が合う、心地よく過ごす",
+        "nuance_ja": "人や場所と自然に合っている感じを表すカジュアルな表現です。",
+        "examples": [
+          {
+            "sentence_en": "I really vibe with her sense of humor.",
+            "sentence_ja": "彼女のユーモアのセンス、すごく自分に合う。"
+          }
+        ],
+        "scene": [
+          "friends",
+          "romance",
+          "sns"
+        ],
+        "emotion_categories": [
+          "positive"
+        ],
+        "warning_ja": "動詞として使う場合は非常にカジュアルなので、面接や正式な自己紹介では避けるのが無難です。"
+      }
+    ]
+  },
+  {
+    "id": "slang_005",
+    "slang": "slay",
+    "meanings": [
+      {
+        "meaning_ja": "すごくかっこよく決める、圧倒的に成功する",
+        "nuance_ja": "服装、パフォーマンス、態度などを強く称賛する時に使います。",
+        "examples": [
+          {
+            "sentence_en": "You slayed that presentation.",
+            "sentence_ja": "あのプレゼン、めちゃくちゃ決まってたよ。"
+          }
+        ],
+        "scene": [
+          "friends",
+          "sns",
+          "daily_conversation"
+        ],
+        "emotion_categories": [
+          "admiration",
+          "excited"
+        ],
+        "warning_ja": "本来の意味とは異なるスラング用法なので、文脈がないと誤解される可能性があります。フォーマルな評価文では使わないでください。"
+      }
+    ]
+  },
+  {
+    "id": "slang_006",
+    "slang": "flex",
+    "meanings": [
+      {
+        "meaning_ja": "自慢する、見せびらかす",
+        "nuance_ja": "お金、持ち物、能力などを人に見せつける行為を少し皮肉っぽく表します。",
+        "examples": [
+          {
+            "sentence_en": "He keeps posting his new car. What a flex.",
+            "sentence_ja": "彼、新しい車をずっと投稿してるね。すごい自慢だね。"
+          }
+        ],
+        "scene": [
+          "sns",
+          "friends"
+        ],
+        "emotion_categories": [
+          "sarcasm",
+          "frustration"
+        ],
+        "warning_ja": "相手に直接言うと批判的に聞こえることがあるため、褒めたい時は nice や impressive の方が安全です。"
+      },
+      {
+        "meaning_ja": "自慢できるもの、誇れること",
+        "nuance_ja": "人に見せたくなるような強みや成果を指す名詞として使います。",
+        "examples": [
+          {
+            "sentence_en": "Getting that job is a serious flex.",
+            "sentence_ja": "その仕事に受かったのはかなり誇れることだよ。"
+          }
+        ],
+        "scene": [
+          "friends",
+          "sns",
+          "daily_conversation"
+        ],
+        "emotion_categories": [
+          "admiration",
+          "pride"
+        ],
+        "warning_ja": "褒め言葉として使う場合でも少しくだけた響きがあるため、正式な推薦文などには向きません。"
+      }
+    ]
+  },
+  {
+    "id": "slang_007",
+    "slang": "ghost",
+    "meanings": [
+      {
+        "meaning_ja": "急に連絡を絶つ",
+        "nuance_ja": "恋愛や友人関係で、説明なく返信しなくなる行為を表します。",
+        "examples": [
+          {
+            "sentence_en": "We went on two dates, and then he ghosted me.",
+            "sentence_ja": "2回デートしたのに、その後彼から急に連絡が来なくなった。"
+          }
+        ],
+        "scene": [
+          "romance",
+          "friends",
+          "sns"
+        ],
+        "emotion_categories": [
+          "confusion",
+          "sadness"
+        ],
+        "warning_ja": "相手の行動を責めるニュアンスが強いので、単に返信が遅いだけの時には使わないでください。"
+      }
+    ]
+  },
+  {
+    "id": "slang_008",
+    "slang": "salty",
+    "meanings": [
+      {
+        "meaning_ja": "悔しがっている、すねている",
+        "nuance_ja": "負けたり批判されたりして、不機嫌になっている様子をからかい気味に表します。",
+        "examples": [
+          {
+            "sentence_en": "He's still salty about losing the game.",
+            "sentence_ja": "彼はまだ試合に負けたことを悔しがっている。"
+          }
+        ],
+        "scene": [
+          "gaming",
+          "sports",
+          "friends"
+        ],
+        "emotion_categories": [
+          "frustration"
+        ],
+        "warning_ja": "相手が本当に怒っている時に使うと火に油を注ぐことがあるため、冗談が通じる相手に限定してください。"
+      }
+    ]
+  },
+  {
+    "id": "slang_009",
+    "slang": "savage",
+    "meanings": [
+      {
+        "meaning_ja": "容赦ない、キレのある",
+        "nuance_ja": "遠慮のない発言や行動が強烈で面白い時に使います。",
+        "examples": [
+          {
+            "sentence_en": "Her comeback was savage.",
+            "sentence_ja": "彼女の言い返しは容赦なくてキレがあった。"
+          }
+        ],
+        "scene": [
+          "sns",
+          "friends",
+          "memes"
+        ],
+        "emotion_categories": [
+          "surprise",
+          "funny"
+        ],
+        "warning_ja": "攻撃的なニュアンスもあるため、相手を傷つける発言を褒めるように使うと不快に思われることがあります。"
+      }
+    ]
+  },
+  {
+    "id": "slang_010",
+    "slang": "goat",
+    "meanings": [
+      {
+        "meaning_ja": "史上最高の人、最高レベルの存在",
+        "nuance_ja": "Greatest Of All Time の略として、スポーツ選手やアーティストなどを強く称賛します。",
+        "examples": [
+          {
+            "sentence_en": "Serena is the goat in tennis.",
+            "sentence_ja": "セリーナはテニス界の史上最高の存在だ。"
+          }
+        ],
+        "scene": [
+          "sports",
+          "music",
+          "sns"
+        ],
+        "emotion_categories": [
+          "admiration",
+          "respect"
+        ],
+        "warning_ja": "動物の goat と同じ綴りなので、文脈がないと通常の意味に取られることがあります。大文字で GOAT と書くことも多いです。"
+      }
+    ]
+  },
+  {
+    "id": "slang_011",
+    "slang": "bet",
+    "meanings": [
+      {
+        "meaning_ja": "了解、いいよ",
+        "nuance_ja": "相手の提案や依頼に軽く同意する時のカジュアルな返事です。",
+        "examples": [
+          {
+            "sentence_en": "Can you pick me up at seven? Bet.",
+            "sentence_ja": "7時に迎えに来てくれる？ 了解。"
+          }
+        ],
+        "scene": [
+          "friends",
+          "chat"
+        ],
+        "emotion_categories": [
+          "agreement",
+          "positive"
+        ],
+        "warning_ja": "かなりくだけた返事なので、上司や顧客への返答には使わないでください。"
+      },
+      {
+        "meaning_ja": "本気だよ、見てな",
+        "nuance_ja": "自分が何かをやると強く宣言する時に使います。",
+        "examples": [
+          {
+            "sentence_en": "You think I can't finish this today? Bet.",
+            "sentence_ja": "今日中に終わらせられないと思ってるの？ 見てな。"
+          }
+        ],
+        "scene": [
+          "friends",
+          "sns"
+        ],
+        "emotion_categories": [
+          "confidence"
+        ],
+        "warning_ja": "挑発的に聞こえることがあるため、真面目な議論や職場での返答には向きません。"
+      }
+    ]
+  },
+  {
+    "id": "slang_012",
+    "slang": "extra",
+    "meanings": [
+      {
+        "meaning_ja": "大げさ、やりすぎ",
+        "nuance_ja": "必要以上に派手だったり感情表現が強すぎたりする様子を指します。",
+        "examples": [
+          {
+            "sentence_en": "She brought balloons to a five-minute meeting. That's so extra.",
+            "sentence_ja": "彼女、5分の会議に風船を持ってきたんだ。かなりやりすぎだね。"
+          }
+        ],
+        "scene": [
+          "friends",
+          "sns",
+          "memes"
+        ],
+        "emotion_categories": [
+          "frustration",
+          "funny"
+        ],
+        "warning_ja": "相手の個性を否定するように聞こえる場合があるので、本人に向けて使う時は口調に注意してください。"
+      }
+    ]
+  },
+  {
+    "id": "slang_013",
+    "slang": "cringe",
+    "meanings": [
+      {
+        "meaning_ja": "見ていて恥ずかしい、痛い",
+        "nuance_ja": "気まずさや恥ずかしさを感じる言動に対して使います。",
+        "examples": [
+          {
+            "sentence_en": "That old video of me singing is so cringe.",
+            "sentence_ja": "昔の自分が歌っている動画、めちゃくちゃ見ていて恥ずかしい。"
+          }
+        ],
+        "scene": [
+          "sns",
+          "friends",
+          "memes"
+        ],
+        "emotion_categories": [
+          "embarrassment",
+          "awkward"
+        ],
+        "warning_ja": "他人に対して使うとかなり失礼に聞こえることがあります。自虐として使う方が安全です。"
+      }
+    ]
+  },
+  {
+    "id": "slang_014",
+    "slang": "bussin",
+    "meanings": [
+      {
+        "meaning_ja": "すごくおいしい、最高",
+        "nuance_ja": "特に食べ物がとてもおいしい時に、テンション高めに褒める表現です。",
+        "examples": [
+          {
+            "sentence_en": "This ramen is bussin.",
+            "sentence_ja": "このラーメン、めちゃくちゃおいしい。"
+          }
+        ],
+        "scene": [
+          "food",
+          "sns",
+          "friends"
+        ],
+        "emotion_categories": [
+          "joy",
+          "excited"
+        ],
+        "warning_ja": "若者っぽいかなりくだけた表現なので、レストランの正式なレビューや仕事の会話では不自然になることがあります。"
+      }
+    ]
+  },
+  {
+    "id": "slang_015",
+    "slang": "shook",
+    "meanings": [
+      {
+        "meaning_ja": "衝撃を受けた、動揺した",
+        "nuance_ja": "驚きやショックで心が揺さぶられた時に使います。",
+        "examples": [
+          {
+            "sentence_en": "I saw the plot twist, and I was shook.",
+            "sentence_ja": "あのどんでん返しを見て、衝撃を受けた。"
+          }
+        ],
+        "scene": [
+          "movies",
+          "sns",
+          "friends"
+        ],
+        "emotion_categories": [
+          "surprise",
+          "confusion"
+        ],
+        "warning_ja": "文法的には shaken が標準的ですが、スラングでは shook と言います。正式な文章では使わないでください。"
+      }
+    ]
+  },
+  {
+    "id": "slang_016",
+    "slang": "no cap",
+    "meanings": [
+      {
+        "meaning_ja": "本当に、嘘じゃなく",
+        "nuance_ja": "自分の発言が誇張や嘘ではないと強調する表現です。",
+        "examples": [
+          {
+            "sentence_en": "That was the best burger I've ever had, no cap.",
+            "sentence_ja": "あれは今まで食べた中で一番おいしいバーガーだった。本当に。"
+          }
+        ],
+        "scene": [
+          "friends",
+          "sns",
+          "review"
+        ],
+        "emotion_categories": [
+          "confidence"
+        ],
+        "warning_ja": "非常にカジュアルで若者言葉の印象が強いため、フォーマルな英語では honestly や seriously を使ってください。"
+      }
+    ]
+  },
+  {
+    "id": "slang_017",
+    "slang": "my bad",
+    "meanings": [
+      {
+        "meaning_ja": "ごめん、私のミス",
+        "nuance_ja": "軽いミスを認めて謝る時に使うくだけた表現です。",
+        "examples": [
+          {
+            "sentence_en": "I sent the wrong file. My bad.",
+            "sentence_ja": "違うファイルを送っちゃった。ごめん、私のミス。"
+          }
+        ],
+        "scene": [
+          "friends",
+          "chat",
+          "daily_conversation"
+        ],
+        "emotion_categories": [
+          "negative",
+          "positive"
+        ],
+        "warning_ja": "重大なミスや正式な謝罪では軽すぎます。仕事で深刻な問題が起きた時は I'm sorry や I apologize を使ってください。"
+      }
+    ]
+  },
+  {
+    "id": "slang_018",
+    "slang": "say less",
+    "meanings": [
+      {
+        "meaning_ja": "了解、それ以上言わなくていい",
+        "nuance_ja": "相手の意図をすぐ理解し、引き受ける時に使います。",
+        "examples": [
+          {
+            "sentence_en": "Can you bring snacks tonight? Say less.",
+            "sentence_ja": "今夜お菓子を持ってきてくれる？ 了解、任せて。"
+          }
+        ],
+        "scene": [
+          "friends",
+          "chat"
+        ],
+        "emotion_categories": [
+          "agreement",
+          "confidence"
+        ],
+        "warning_ja": "直訳すると命令っぽく見えますが、スラングでは同意の意味です。ただし目上の人には失礼に聞こえる可能性があります。"
+      }
+    ]
+  },
+  {
+    "id": "slang_019",
+    "slang": "low-key",
+    "meanings": [
+      {
+        "meaning_ja": "実は少し、控えめに言って",
+        "nuance_ja": "強く言い切らず、内心の気持ちを少し抑えて表す時に使います。",
+        "examples": [
+          {
+            "sentence_en": "I'm low-key nervous about the interview.",
+            "sentence_ja": "実は面接のこと、ちょっと緊張してる。"
+          }
+        ],
+        "scene": [
+          "friends",
+          "sns",
+          "daily_conversation"
+        ],
+        "emotion_categories": [
+          "nervous",
+          "chill"
+        ],
+        "warning_ja": "意味を強める表現ではなく、むしろ控えめにする表現です。very の代わりに使わないでください。"
+      }
+    ]
+  },
+  {
+    "id": "slang_020",
+    "slang": "high-key",
+    "meanings": [
+      {
+        "meaning_ja": "かなり、本気で",
+        "nuance_ja": "隠さずはっきり強く思っていることを表します。",
+        "examples": [
+          {
+            "sentence_en": "I'm high-key excited for the concert.",
+            "sentence_ja": "そのコンサート、かなり本気で楽しみにしてる。"
+          }
+        ],
+        "scene": [
+          "friends",
+          "sns",
+          "daily_conversation"
+        ],
+        "emotion_categories": [
+          "excited",
+          "confidence"
+        ],
+        "warning_ja": "low-key と反対のニュアンスです。どちらもカジュアルなので、正式な文章では使わない方が自然です。"
+      }
+    ]
+  },
+  {
+    "id": "slang_021",
+    "slang": "hits different",
+    "meanings": [
+      {
+        "meaning_ja": "いつもと違って特別に心に響く",
+        "nuance_ja": "同じものでも状況や気分によって特別に良く感じる時に使います。",
+        "examples": [
+          {
+            "sentence_en": "This song hits different at night.",
+            "sentence_ja": "この曲、夜に聴くと特別に心に響く。"
+          }
+        ],
+        "scene": [
+          "music",
+          "sns",
+          "review"
+        ],
+        "emotion_categories": [
+          "positive"
+        ],
+        "warning_ja": "単に different という意味ではなく、感情的に特別だという意味です。直訳しすぎないようにしてください。"
+      }
+    ]
+  },
+  {
+    "id": "slang_022",
+    "slang": "main character energy",
+    "meanings": [
+      {
+        "meaning_ja": "主人公っぽい存在感",
+        "nuance_ja": "自信があり、注目を集めるような雰囲気を褒めたり茶化したりする表現です。",
+        "examples": [
+          {
+            "sentence_en": "Walking into work with that coat is main character energy.",
+            "sentence_ja": "そのコートで職場に入ってくるの、主人公感があるね。"
+          }
+        ],
+        "scene": [
+          "sns",
+          "fashion",
+          "friends"
+        ],
+        "emotion_categories": [
+          "admiration",
+          "funny"
+        ],
+        "warning_ja": "褒め言葉にも皮肉にもなります。相手との関係性や口調によって受け取られ方が変わるので注意してください。"
+      }
+    ]
+  },
+  {
+    "id": "slang_023",
+    "slang": "rent-free",
+    "meanings": [
+      {
+        "meaning_ja": "頭から離れない",
+        "nuance_ja": "人、出来事、曲、発言などが何度も思い出される状態をユーモラスに表します。",
+        "examples": [
+          {
+            "sentence_en": "That joke has been living rent-free in my head all week.",
+            "sentence_ja": "あのジョークが今週ずっと頭から離れない。"
+          }
+        ],
+        "scene": [
+          "sns",
+          "friends",
+          "review"
+        ],
+        "emotion_categories": [
+          "funny",
+          "curiosity"
+        ],
+        "warning_ja": "家賃の話ではなく比喩表現です。living rent-free in my head の形でよく使われます。"
+      }
+    ]
+  },
+  {
+    "id": "slang_024",
+    "slang": "touch grass",
+    "meanings": [
+      {
+        "meaning_ja": "ネットから離れて現実に戻れ",
+        "nuance_ja": "オンラインで熱くなりすぎている人に、少し外に出て落ち着けと言う皮肉な表現です。",
+        "examples": [
+          {
+            "sentence_en": "You've been arguing online for six hours. Go touch grass.",
+            "sentence_ja": "6時間もネットで言い争ってるじゃん。少し現実に戻りなよ。"
+          }
+        ],
+        "scene": [
+          "sns",
+          "internet",
+          "memes"
+        ],
+        "emotion_categories": [
+          "sarcasm",
+          "frustration"
+        ],
+        "warning_ja": "かなり煽りっぽく聞こえる表現です。親しい相手以外に使うと失礼になります。"
+      }
+    ]
+  },
+  {
+    "id": "slang_025",
+    "slang": "spill the tea",
+    "meanings": [
+      {
+        "meaning_ja": "ゴシップや裏話を教える",
+        "nuance_ja": "気になる噂や秘密の話を聞きたい時に、軽いノリで使います。",
+        "examples": [
+          {
+            "sentence_en": "You talked to him after the meeting? Spill the tea.",
+            "sentence_ja": "会議の後に彼と話したの？ 裏話を教えて。"
+          }
+        ],
+        "scene": [
+          "friends",
+          "sns"
+        ],
+        "emotion_categories": [
+          "curiosity",
+          "excited"
+        ],
+        "warning_ja": "噂話を促す表現なので、職場や他人のプライバシーに関わる場面では使い方に注意してください。"
+      }
+    ]
+  },
+  {
+    "id": "slang_026",
+    "slang": "big yikes",
+    "meanings": [
+      {
+        "meaning_ja": "かなりまずい、かなり引く",
+        "nuance_ja": "気まずい状況や失敗に対して、強めの引き気味な反応を示します。",
+        "examples": [
+          {
+            "sentence_en": "He accidentally replied all with that message. Big yikes.",
+            "sentence_ja": "彼、あのメッセージを間違えて全員に返信しちゃったんだ。かなりまずいね。"
+          }
+        ],
+        "scene": [
+          "sns",
+          "friends",
+          "daily_conversation"
+        ],
+        "emotion_categories": [
+          "awkward",
+          "surprise"
+        ],
+        "warning_ja": "相手の失敗を笑うように聞こえることがあります。本人が傷ついている時には使わない方がよいです。"
+      }
+    ]
+  },
+  {
+    "id": "slang_027",
+    "slang": "I can't even",
+    "meanings": [
+      {
+        "meaning_ja": "無理、言葉にならない",
+        "nuance_ja": "驚き、笑い、呆れなどで反応しきれない時に使う表現です。",
+        "examples": [
+          {
+            "sentence_en": "She wore a dinosaur costume to the office. I can't even.",
+            "sentence_ja": "彼女、恐竜の衣装で会社に来たんだ。もう無理、言葉にならない。"
+          }
+        ],
+        "scene": [
+          "friends",
+          "sns",
+          "memes"
+        ],
+        "emotion_categories": [
+          "surprise",
+          "funny"
+        ],
+        "warning_ja": "文法的に文が途中で止まっている表現ですが、スラングとして成立しています。正式な文章では使わないでください。"
+      }
+    ]
+  },
+  {
+    "id": "slang_028",
+    "slang": "periodt",
+    "meanings": [
+      {
+        "meaning_ja": "以上、反論なし",
+        "nuance_ja": "自分の意見を強く締めくくり、これ以上議論しないという雰囲気を出します。",
+        "examples": [
+          {
+            "sentence_en": "She deserves that promotion, periodt.",
+            "sentence_ja": "彼女はその昇進にふさわしい。以上、反論なし。"
+          }
+        ],
+        "scene": [
+          "sns",
+          "friends",
+          "daily_conversation"
+        ],
+        "emotion_categories": [
+          "confidence"
+        ],
+        "warning_ja": "強い言い切りなので、議論の相手に使うと高圧的に聞こえることがあります。"
+      }
+    ]
+  },
+  {
+    "id": "slang_029",
+    "slang": "OMG",
+    "meanings": [
+      {
+        "meaning_ja": "えっ、うわ、信じられない",
+        "nuance_ja": "驚き、喜び、ショックなど幅広い強い反応を表す略語です。",
+        "examples": [
+          {
+            "sentence_en": "OMG, you got the tickets!",
+            "sentence_ja": "えっ、チケット取れたの！"
+          }
+        ],
+        "scene": [
+          "chat",
+          "sns",
+          "friends"
+        ],
+        "emotion_categories": [
+          "surprise",
+          "excited"
+        ],
+        "warning_ja": "宗教的な表現に由来するため、人によっては不快に感じることがあります。フォーマルな場面では使わないでください。"
+      }
+    ]
+  },
+  {
+    "id": "slang_030",
+    "slang": "LOL",
+    "meanings": [
+      {
+        "meaning_ja": "笑、ウケる",
+        "nuance_ja": "面白い時や軽く場を和ませたい時に使うチャット表現です。",
+        "examples": [
+          {
+            "sentence_en": "I just walked into the wrong classroom, LOL.",
+            "sentence_ja": "今、間違った教室に入っちゃった。笑"
+          }
+        ],
+        "scene": [
+          "chat",
+          "sns",
+          "friends"
+        ],
+        "emotion_categories": [
+          "funny",
+          "positive"
+        ],
+        "warning_ja": "日本語の『笑』に近いですが、真剣な謝罪や深刻な話題につけると軽薄に見えます。"
+      }
+    ]
+  },
+  {
+    "id": "slang_031",
+    "slang": "AFK",
+    "meanings": [
+      {
+        "meaning_ja": "席を外している",
+        "nuance_ja": "オンラインゲームやチャットで、一時的にキーボードの前にいないことを示します。",
+        "examples": [
+          {
+            "sentence_en": "I'll be AFK for ten minutes.",
+            "sentence_ja": "10分くらい席を外すね。"
+          }
+        ],
+        "scene": [
+          "gaming",
+          "chat",
+          "work"
+        ],
+        "emotion_categories": [
+          "chill"
+        ],
+        "warning_ja": "主にオンライン文脈で使う略語です。対面の会話では away for a minute などの方が自然です。"
+      }
+    ]
+  },
+  {
+    "id": "slang_032",
+    "slang": "IDK",
+    "meanings": [
+      {
+        "meaning_ja": "わからない、知らない",
+        "nuance_ja": "I don't know の略で、カジュアルなチャットでよく使います。",
+        "examples": [
+          {
+            "sentence_en": "IDK what time the movie starts.",
+            "sentence_ja": "映画が何時に始まるのかわからない。"
+          }
+        ],
+        "scene": [
+          "chat",
+          "sns",
+          "friends"
+        ],
+        "emotion_categories": [
+          "confusion",
+          "positive"
+        ],
+        "warning_ja": "くだけた略語なので、仕事のメールや学校の正式な提出物では I don't know と書いてください。"
+      }
+    ]
+  },
+  {
+    "id": "slang_033",
+    "slang": "TBH",
+    "meanings": [
+      {
+        "meaning_ja": "正直に言うと",
+        "nuance_ja": "本音や率直な意見を言う前に置く略語です。",
+        "examples": [
+          {
+            "sentence_en": "TBH, I didn't really like the ending.",
+            "sentence_ja": "正直に言うと、結末はあまり好きじゃなかった。"
+          }
+        ],
+        "scene": [
+          "chat",
+          "sns",
+          "daily_conversation"
+        ],
+        "emotion_categories": [
+          "confidence"
+        ],
+        "warning_ja": "率直さを出せますが、否定的な意見の前に使うと少しきつく聞こえることがあります。"
+      }
+    ]
+  },
+  {
+    "id": "slang_034",
+    "slang": "FR",
+    "meanings": [
+      {
+        "meaning_ja": "本当に、マジで",
+        "nuance_ja": "for real の略で、同意や本気度を強める時に使います。",
+        "examples": [
+          {
+            "sentence_en": "That test was impossible, FR.",
+            "sentence_ja": "あのテスト、マジで無理だった。"
+          }
+        ],
+        "scene": [
+          "chat",
+          "sns",
+          "friends"
+        ],
+        "emotion_categories": [
+          "confidence",
+          "positive"
+        ],
+        "warning_ja": "略語なので、相手がネットスラングに慣れていないと通じないことがあります。正式な文では for real も避ける方が無難です。"
+      },
+      {
+        "meaning_ja": "そうだよね、本当にそれ",
+        "nuance_ja": "相手の発言に強く同意する短い返事として使います。",
+        "examples": [
+          {
+            "sentence_en": "This week felt endless. FR.",
+            "sentence_ja": "今週、永遠に続く感じだった。本当にそれ。"
+          }
+        ],
+        "scene": [
+          "chat",
+          "sns"
+        ],
+        "emotion_categories": [
+          "agreement",
+          "positive"
+        ],
+        "warning_ja": "返事として FR だけを送ると、相手によってはそっけなく見える場合があります。"
+      }
+    ]
+  },
+  {
+    "id": "slang_035",
+    "slang": "💀",
+    "meanings": [
+      {
+        "meaning_ja": "面白すぎて死ぬ、笑いすぎた",
+        "nuance_ja": "爆笑を表す絵文字スラングとして使われます。",
+        "examples": [
+          {
+            "sentence_en": "He tried to act cool and dropped his phone 💀",
+            "sentence_ja": "彼、かっこつけようとしてスマホを落としたんだ。面白すぎる。"
+          }
+        ],
+        "scene": [
+          "sns",
+          "chat",
+          "memes"
+        ],
+        "emotion_categories": [
+          "funny",
+          "surprise"
+        ],
+        "warning_ja": "文字通りの死を表す場面では不適切です。深刻な話題や事故の文脈では絶対に使わないでください。"
+      },
+      {
+        "meaning_ja": "終わった、詰んだ",
+        "nuance_ja": "失敗や気まずい状況に対して、冗談っぽく絶望を表します。",
+        "examples": [
+          {
+            "sentence_en": "I forgot the exam was today 💀",
+            "sentence_ja": "試験が今日だって忘れてた。詰んだ。"
+          }
+        ],
+        "scene": [
+          "chat",
+          "school",
+          "sns"
+        ],
+        "emotion_categories": [
+          "nervous",
+          "fear"
+        ],
+        "warning_ja": "軽い自虐として使う表現です。本当に深刻な危機には使わないでください。"
+      }
+    ]
+  },
+  {
+    "id": "slang_036",
+    "slang": "🔥",
+    "meanings": [
+      {
+        "meaning_ja": "最高、かっこいい、熱い",
+        "nuance_ja": "音楽、服装、投稿、パフォーマンスなどを強く褒める時に使います。",
+        "examples": [
+          {
+            "sentence_en": "Your new track is 🔥",
+            "sentence_ja": "君の新曲、最高だね。"
+          }
+        ],
+        "scene": [
+          "sns",
+          "music",
+          "daily_conversation"
+        ],
+        "emotion_categories": [
+          "admiration",
+          "excited"
+        ],
+        "warning_ja": "火事や危険を表す文脈では文字通りに受け取られることがあります。文脈に注意してください。"
+      }
+    ]
+  },
+  {
+    "id": "slang_037",
+    "slang": "👀",
+    "meanings": [
+      {
+        "meaning_ja": "気になる、見ている、注目している",
+        "nuance_ja": "興味や好奇心を示したり、意味深に何かを見ている雰囲気を出します。",
+        "examples": [
+          {
+            "sentence_en": "New menu dropping tomorrow 👀",
+            "sentence_ja": "明日新メニューが出るらしい。気になるね。"
+          }
+        ],
+        "scene": [
+          "sns",
+          "chat"
+        ],
+        "emotion_categories": [
+          "curiosity",
+          "excitement"
+        ],
+        "warning_ja": "意味深なニュアンスがあるため、相手によっては詮索しているように見えることがあります。"
+      }
+    ]
+  },
+  {
+    "id": "slang_038",
+    "slang": "😭",
+    "meanings": [
+      {
+        "meaning_ja": "泣くほど面白い、感情が強い",
+        "nuance_ja": "本当に悲しい時だけでなく、笑いすぎた時や感動した時にも使われます。",
+        "examples": [
+          {
+            "sentence_en": "This video is too funny 😭",
+            "sentence_ja": "この動画、面白すぎて泣ける。"
+          }
+        ],
+        "scene": [
+          "sns",
+          "chat",
+          "memes"
+        ],
+        "emotion_categories": [
+          "funny",
+          "positive"
+        ],
+        "warning_ja": "悲しみ以外にも使われるため、文脈がないと感情が伝わりにくいことがあります。"
+      },
+      {
+        "meaning_ja": "つらい、悲しい",
+        "nuance_ja": "落ち込みや悲しさをカジュアルに表します。",
+        "examples": [
+          {
+            "sentence_en": "I missed the last train 😭",
+            "sentence_ja": "終電を逃した。つらい。"
+          }
+        ],
+        "scene": [
+          "chat",
+          "sns",
+          "daily_conversation"
+        ],
+        "emotion_categories": [
+          "sadness",
+          "disappointment"
+        ],
+        "warning_ja": "深刻な悲しみを軽く見せてしまう場合があるため、重大な話題では言葉で説明する方が適切です。"
+      }
+    ]
+  },
+  {
+    "id": "slang_039",
+    "slang": "✨",
+    "meanings": [
+      {
+        "meaning_ja": "きらきらした感じ、特別感",
+        "nuance_ja": "言葉や投稿に明るさ、かわいさ、少し皮肉な強調を加えます。",
+        "examples": [
+          {
+            "sentence_en": "We're doing ✨team building✨ again.",
+            "sentence_ja": "また『チームビルディング』をやるんだって。"
+          }
+        ],
+        "scene": [
+          "sns",
+          "chat",
+          "memes"
+        ],
+        "emotion_categories": [
+          "funny",
+          "sarcasm"
+        ],
+        "warning_ja": "単純な装飾にも皮肉にもなります。引用っぽく挟むと少し茶化した印象になるので注意してください。"
+      }
+    ]
+  },
+  {
+    "id": "slang_040",
+    "slang": "🤡",
+    "meanings": [
+      {
+        "meaning_ja": "自分がバカみたい、やらかした",
+        "nuance_ja": "自分の失敗や勘違いを自虐的に表します。",
+        "examples": [
+          {
+            "sentence_en": "I thought the meeting was tomorrow 🤡",
+            "sentence_ja": "会議は明日だと思ってた。完全にやらかした。"
+          }
+        ],
+        "scene": [
+          "sns",
+          "chat",
+          "memes"
+        ],
+        "emotion_categories": [
+          "embarrassment",
+          "funny"
+        ],
+        "warning_ja": "他人に向けて使うと侮辱になりやすいです。基本的には自虐や冗談の文脈で使ってください。"
+      }
+    ]
+  }
+]
