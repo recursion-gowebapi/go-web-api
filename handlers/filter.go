@@ -12,7 +12,7 @@ import (
 
 func filter(w http.ResponseWriter, r *http.Request) {
 	var result []models.Slang
-
+	//JSONファイルの読み込み
 	jsonFile, err := os.Open("slang.json")
 	if err != nil {
 		writeError(w, http.StatusInternalServerError, "Internal server error")
@@ -59,6 +59,7 @@ func filter(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
+	//json形式にエンコードし、結果を返す
 	resultJSON, err := json.Marshal(result)
 	if err != nil {
 		fmt.Println(err)
@@ -89,6 +90,7 @@ func isContain(slang models.Slang, word string, category string) bool {
 	return false
 }
 
+//エラーが生じた場合、エラーを返す
 func writeError(w http.ResponseWriter, status int, msg string) {
 	res := models.ErrorResponse{
 		Error: msg,
