@@ -13,7 +13,7 @@ import (
 func filter(w http.ResponseWriter, r *http.Request) {
 	var result []models.Slang
 	//JSONファイルの読み込み
-	jsonFile, err := os.Open("slang.json")
+	jsonFile, err := os.Open("data/slang.json")
 	if err != nil {
 		writeError(w, http.StatusInternalServerError, "Internal server error")
 		return
@@ -70,22 +70,22 @@ func filter(w http.ResponseWriter, r *http.Request) {
 }
 
 //そのスラングにワードが含まれているか確認し、bool値を返す
-func isContain(slang models.Slang, word string, category string) bool {
+func isContain(slang models.Slang, targetWord string, category string) bool {
 	for _, meaning := range slang.Meanings {
+		var target []string
 
 		if category == "emotion" {
-			for _, words := range meaning.EmotionCategories {
-				if words == word {
-					return true
-				}
-			}
+			target = meaning.EmotionCategories
 		} else if category == "scene" {
-			for _, words := range meaning.Scene {
-				if words == word {
-					return true
-				}
+			target = meaning.Scene
+		}
+
+		for _, words := range target {
+			if words == targetWord {
+				return true
 			}
 		}
+
 	}
 	return false
 }
