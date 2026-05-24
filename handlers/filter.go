@@ -13,7 +13,7 @@ import (
 func filter(w http.ResponseWriter, r *http.Request) {
 	var result []models.Slang
 	//JSONファイルの読み込み
-	jsonFile, err := os.Open("data/slang.json")
+	jsonFile, err := os.Open("data/slangs.json")
 	if err != nil {
 		writeError(w, http.StatusInternalServerError, "Internal server error")
 		return
