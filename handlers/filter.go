@@ -2,32 +2,24 @@ package handlers
 
 import (
 	"encoding/json"
-	"fmt"
-	"io"
 	"net/http"
-	"os"
 
 	"github.com/recursion-gowebapi/go-web-api/models"
+	"github.com/recursion-gowebapi/go-web-api/store"
 )
 
-func filter(w http.ResponseWriter, r *http.Request) {
+func Filter(w http.ResponseWriter, r *http.Request) {
+
+	if r.Method != http.MethodGet {
+		w.Header().Set("Allow", "GET")
+		writeError(w, http.StatusMethodNotAllowed, "method not allowed")
+		return
+	}
+
 	var result []models.Slang
 	//JSONファイルの読み込み
-	jsonFile, err := os.Open("data/slangs.json")
-	if err != nil {
-		writeError(w, http.StatusInternalServerError, "Internal server error")
-		return
-	}
 
-	defer jsonFile.Close()
-	jsonData, err := io.ReadAll(jsonFile)
-	if err != nil {
-		writeError(w, http.StatusInternalServerError, "Internal server error")
-		return
-	}
-
-	var slangs []models.Slang
-	err = json.Unmarshal(jsonData, &slangs)
+	slangs, err := store.GetSlangs()
 	if err != nil {
 		writeError(w, http.StatusInternalServerError, "Internal server error")
 		return
@@ -62,7 +54,8 @@ func filter(w http.ResponseWriter, r *http.Request) {
 	//json形式にエンコードし、結果を返す
 	resultJSON, err := json.Marshal(result)
 	if err != nil {
-		fmt.Println(err)
+		writeError(w, http.StatusInternalServerError, "Internal server error")
+		return
 	}
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
@@ -80,8 +73,8 @@ func isContain(slang models.Slang, targetWord string, category string) bool {
 			target = meaning.Scene
 		}
 
-		for _, words := range target {
-			if words == targetWord {
+		for _, word := range target {
+			if word == targetWord {
 				return true
 			}
 		}
