@@ -19,3 +19,7 @@ type Example struct {
 	SentenceEn string `json:"sentence_en"`
 	SentenceJa string `json:"sentence_ja"`
 }
+
+type ErrorResponse struct {
+	Error string `json:"error"`
+}
