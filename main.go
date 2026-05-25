@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+
+	"github.com/recursion-gowebapi/go-web-api/handlers"
 )
 
 func main() {
@@ -11,6 +13,8 @@ func main() {
 		fmt.Fprintln(w, "Go Web API is running")
 	})
 
+	http.HandleFunc("/api/slangs", handlers.SlangsHandler)
+	http.HandleFunc("/api/slangs/search", handlers.SearchSlangsHandler)
 	log.Println("Server started at http://localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

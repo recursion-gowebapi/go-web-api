@@ -1,11 +1,11 @@
-<<<<<<< Updated upstream
-=======
 package store
 
 import (
 	"encoding/json"
 	"os"
 	"fmt"
+	"strings"
+
 	"github.com/recursion-gowebapi/go-web-api/models"
 )
 
@@ -24,6 +24,7 @@ func GetSlangs() ([]models.Slang, error) {
 }
 
 func GetSlangByID(id string) (*models.Slang, error) {
+	// データ取得
 	slangs, err := GetSlangs()
 	if err != nil {
 		return nil, err
@@ -37,4 +38,25 @@ func GetSlangByID(id string) (*models.Slang, error) {
 
 	return nil, fmt.Errorf("slang not found")
 }
->>>>>>> Stashed changes
+
+func SearchSlangs(keyword string) ([]models.Slang, error) {
+  slangs, err := GetSlangs()
+  
+  if err != nil {
+    return nil, err
+  }
+  
+  normalizedKeyword := normalizeText(keyword)
+
+	results := []models.Slang{}
+
+	for _, slang := range slangs {
+		normalizedSlang := normalizeText(slang.Slang)
+
+		if normalizedSlang == normalizedKeyword {
+			results = append(results, slang)
+		}
+	}
+
+	return results, nil
+}
