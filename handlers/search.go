@@ -48,7 +48,11 @@ func SearchSlangsHandler(w http.ResponseWriter, r *http.Request) {
 	// keywordでスラング検索
 	results, err := store.SearchSlangs(keyword)
 	if err != nil {
-		respondWithError(w, http.StatusInternalServerError, "internal server error")
+		respondWithError(
+			w, 
+			http.StatusInternalServerError, 
+			"internal server error",
+		)
 		return
 	}
 
