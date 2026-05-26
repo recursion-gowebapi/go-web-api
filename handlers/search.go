@@ -15,18 +15,17 @@ type SearchResponse struct {
 	Items  []models.Slang `json:"items"`
 }
 
-// PR#9 marge後に削除 19-21行
-type ErrorResponse struct {
-	Error string `json:"error"`
-}
-
 // GET /api/slangs/search?keyword={word}
 func SearchSlangsHandler(w http.ResponseWriter, r *http.Request) {
 
-	//メソッドチェック
+	// メソッドチェック
 	if r.Method != http.MethodGet {
 		w.Header().Set("Allow", "GET")
-		respondWithError(w, http.StatusMethodNotAllowed, "method not allowed")
+		respondWithError(
+			w,
+			http.StatusMethodNotAllowed,
+			"method not allowed",
+		)
 		return
 	}
 
@@ -38,22 +37,18 @@ func SearchSlangsHandler(w http.ResponseWriter, r *http.Request) {
 
 	// keyword未指定チェック
 	if strings.TrimSpace(keyword) == "" {
-		w.WriteHeader(http.StatusBadRequest)
-		//PR#9 marge後にmodels.ErrorResponseに置き換え
-		json.NewEncoder(w).Encode(ErrorResponse{
-			Error: "keyword parameter is required",
-		})
+		respondWithError(
+			w,
+			http.StatusBadRequest,
+			"keyword parameter is required",
+		)
 		return
 	}
 
 	// keywordでスラング検索
 	results, err := store.SearchSlangs(keyword)
 	if err != nil {
-		w.WriteHeader(http.StatusInternalServerError)
-		//PR#9 marge後にmodels.ErrorResponseに置き換え
-		json.NewEncoder(w).Encode(ErrorResponse{
-			Error: "internal server error",
-		})
+		respondWithError(w, http.StatusInternalServerError, "internal server error")
 		return
 	}
 
@@ -66,5 +61,3 @@ func SearchSlangsHandler(w http.ResponseWriter, r *http.Request) {
 
 	json.NewEncoder(w).Encode(response)
 }
-
-//メモ：３箇所PR#9 marge後に変更箇所あり
