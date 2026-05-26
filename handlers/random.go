@@ -18,7 +18,7 @@ type RandomResponse struct {
 // GET /api/slangs/random?count={number}
 func RandomSlangsHandler(w http.ResponseWriter, r *http.Request) {
 
-	// メソッドチェック後ほど変更予定
+	// メソッドチェック
 	if r.Method != http.MethodGet {
 		w.Header().Set("Allow", "GET")
 		respondWithError(
