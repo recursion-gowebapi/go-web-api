@@ -2,6 +2,7 @@ package store
 
 import (
 	"encoding/json"
+	"math/rand"
 	"os"
 	"strings"
 
@@ -60,6 +61,29 @@ func SearchSlangs(keyword string) ([]models.Slang, error) {
 			results = append(results, slang)
 		}
 	}
+
+	return results, nil
+}
+
+func RandomSlangs(count int) ([]models.Slang, error) {
+	// データ取得
+	slangs, err := GetSlangs()
+	if err != nil {
+		return nil, err
+	}
+
+	// countの上限をスラング配列の長さに設定
+	if count > len(slangs) {
+		count = len(slangs)
+	}
+
+	// スラング配列をシャッフル
+	rand.Shuffle(len(slangs), func(i, j int) {
+		slangs[i], slangs[j] = slangs[j], slangs[i]
+	})
+
+	// count件取得
+	results := slangs[:count]
 
 	return results, nil
 }
