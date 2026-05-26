@@ -22,6 +22,19 @@ func GetSlangs() ([]models.Slang, error) {
 	return slangs, nil
 }
 
+func GetSlangByID(id string) (*models.Slang, error) {
+	slangs, err := GetSlangs()
+	if err != nil {
+		return nil, err
+	}
+	for _, slang := range slangs {
+		if slang.ID == id {
+			return &slang, nil
+		}
+	}
+	return nil, nil
+}
+
 // stringの小文字化, 空白削除用関数
 func normalizeText(text string) string {
 	return strings.ToLower(strings.TrimSpace(text))
