@@ -87,3 +87,13 @@ func RandomSlangs(count int) ([]models.Slang, error) {
 
 	return results, nil
 }
+
+//jsonファイルの書き換え
+func Save(slangs []models.Slang) error {
+	data, err := json.MarshalIndent(slangs, "", "  ")
+	if err != nil {
+		return err
+	}
+
+	return os.WriteFile("data/slangs.json", data, 0644)
+}

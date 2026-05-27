@@ -3,7 +3,6 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
-	"os"
 
 	"github.com/recursion-gowebapi/go-web-api/models"
 	"github.com/recursion-gowebapi/go-web-api/store"
@@ -29,7 +28,7 @@ func CreateSlang(w http.ResponseWriter, r *http.Request) {
 	//jsonをデコード
 	err = json.NewDecoder(r.Body).Decode(&newSlang)
 	if err != nil {
-		respondWithError(w, http.StatusBadRequest, "Internal server error")
+		respondWithError(w, http.StatusInternalServerError, "Internal server error")
 		return
 	}
 
@@ -37,23 +36,13 @@ func CreateSlang(w http.ResponseWriter, r *http.Request) {
 	slangs = append(slangs, newSlang)
 
 	//ファイルの書き換え
-	err = save(slangs)
+	err = store.Save(slangs)
 	if err != nil {
-		respondWithError(w, http.StatusInternalServerError, "The data is not appropriate")
+		respondWithError(w, http.StatusInternalServerError, "The data saving does not work")
 		return
 	}
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(newSlang)
-}
-
-//jsonファイルの書き換え
-func save(slangs []models.Slang) error {
-	data, err := json.MarshalIndent(slangs, "", "  ")
-	if err != nil {
-		return err
-	}
-
-	return os.WriteFile("data/slangs.json", data, 0644)
 }
