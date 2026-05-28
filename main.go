@@ -18,7 +18,7 @@ func main() {
 	http.HandleFunc("/api/slangs/{id}", handlers.DetailSlangHandler)
 	http.HandleFunc("/api/slangs/filter", handlers.Filter)
 	http.HandleFunc("/api/slangs/random", handlers.RandomSlangsHandler)
-	http.HandleFunc("/api/slangs/post", handlers.CreateSlang)
+	http.HandleFunc("/api/slangs/add", handlers.CreateSlang)
 
 	log.Println("Server started at http://localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
