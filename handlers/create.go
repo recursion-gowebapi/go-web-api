@@ -32,6 +32,22 @@ func CreateSlang(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	//slangのチェック
+	if len(newSlang.Slang) == 0 {
+		respondWithError(w, http.StatusBadRequest, "slang is required")
+		return
+	}
+	//idのチェック
+	if len(newSlang.ID) == 0 {
+		respondWithError(w, http.StatusBadRequest, "id is required")
+		return
+	}
+	//meaningのチェック
+	if len(newSlang.Meanings) == 0 {
+		respondWithError(w, http.StatusBadRequest, "meanings is required")
+		return
+	}
+
 	isContainSlang, err := store.SearchSlangs(newSlang.Slang)
 	if err != nil {
 		respondWithError(w, http.StatusInternalServerError, "Internal server error")
