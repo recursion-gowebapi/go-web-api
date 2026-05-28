@@ -32,6 +32,30 @@ func CreateSlang(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	isContainSlang, err := store.SearchSlangs(newSlang.Slang)
+	if err != nil {
+		respondWithError(w, http.StatusInternalServerError, "Internal server error")
+		return
+	}
+
+	isContainID, err := store.GetSlangByID(newSlang.ID)
+	if err != nil {
+		respondWithError(w, http.StatusInternalServerError, "Internal server error")
+		return
+	}
+
+	//slangがすでにあるか
+	if len(isContainSlang) != 0 {
+		respondWithError(w, http.StatusBadRequest, "The slang already exist")
+		return
+	}
+
+	//IDが重複していないか
+	if isContainID != nil {
+		respondWithError(w, http.StatusBadRequest, "The ID already exist")
+		return
+	}
+
 	//slangsに追加
 	slangs = append(slangs, newSlang)
 
