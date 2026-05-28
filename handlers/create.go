@@ -28,7 +28,7 @@ func CreateSlang(w http.ResponseWriter, r *http.Request) {
 	//jsonをデコード
 	err = json.NewDecoder(r.Body).Decode(&newSlang)
 	if err != nil {
-		respondWithError(w, http.StatusInternalServerError, "Internal server error")
+		respondWithError(w, http.StatusBadRequest, "Invalid request body")
 		return
 	}
 
