@@ -3,6 +3,7 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
+	"slices"
 
 	"github.com/recursion-gowebapi/go-web-api/models"
 	"github.com/recursion-gowebapi/go-web-api/store"
@@ -12,7 +13,7 @@ func Filter(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method != http.MethodGet {
 		w.Header().Set("Allow", "GET")
-		writeError(w, http.StatusMethodNotAllowed, "method not allowed")
+		respondWithError(w, http.StatusMethodNotAllowed, "method not allowed")
 		return
 	}
 
@@ -21,7 +22,7 @@ func Filter(w http.ResponseWriter, r *http.Request) {
 
 	slangs, err := store.GetSlangs()
 	if err != nil {
-		writeError(w, http.StatusInternalServerError, "Internal server error")
+		respondWithError(w, http.StatusInternalServerError, "Internal server error")
 		return
 	}
 
@@ -30,7 +31,7 @@ func Filter(w http.ResponseWriter, r *http.Request) {
 	emotion := r.URL.Query().Get("emotion")
 
 	if scene == "" && emotion == "" {
-		writeError(w, http.StatusBadRequest, "Invalid parameter")
+		respondWithError(w, http.StatusBadRequest, "Invalid parameter")
 		return
 	}
 
@@ -54,7 +55,7 @@ func Filter(w http.ResponseWriter, r *http.Request) {
 	//json形式にエンコードし、結果を返す
 	resultJSON, err := json.Marshal(result)
 	if err != nil {
-		writeError(w, http.StatusInternalServerError, "Internal server error")
+		respondWithError(w, http.StatusInternalServerError, "Internal server error")
 		return
 	}
 	w.Header().Set("Content-Type", "application/json")
@@ -67,33 +68,16 @@ func isContain(slang models.Slang, targetWord string, category string) bool {
 	for _, meaning := range slang.Meanings {
 		var target []string
 
-		if category == "emotion" {
+		switch category {
+		case "emotion":
 			target = meaning.EmotionCategories
-		} else if category == "scene" {
+		case "scene":
 			target = meaning.Scene
 		}
 
-		for _, word := range target {
-			if word == targetWord {
-				return true
-			}
+		if slices.Contains(target, targetWord) {
+			return true
 		}
-
 	}
 	return false
-}
-
-//エラーが生じた場合、エラーを返す
-func writeError(w http.ResponseWriter, status int, msg string) {
-	res := models.ErrorResponse{
-		Error: msg,
-	}
-	resJSON, err := json.Marshal(res)
-	if err != nil {
-		http.Error(w, "encode error failed", http.StatusInternalServerError)
-		return
-	}
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(status)
-	w.Write(resJSON)
 }
