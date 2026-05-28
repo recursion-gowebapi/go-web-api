@@ -62,7 +62,7 @@ func CreateSlang(w http.ResponseWriter, r *http.Request) {
 	//ファイルの書き換え
 	err = store.Save(slangs)
 	if err != nil {
-		respondWithError(w, http.StatusInternalServerError, "The data saving does not work")
+		respondWithError(w, http.StatusInternalServerError, "Data saving does not work")
 		return
 	}
 
