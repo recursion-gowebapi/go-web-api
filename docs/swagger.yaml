@@ -1,0 +1,317 @@
+openapi: 3.0.3
+
+info:
+  title: Native Slang API
+  version: 1.0.0
+  description: 日本人英語学習者向けの英語スラング辞書API
+
+servers:
+  - url: http://localhost:8080/
+
+paths:
+  /api/slangs/add:
+    post:
+      summary: 新しいスラングの追加
+      description: 新しいスラングを追加し、data/slangs.json を更新する。id、slang、meanings は必須。id と slang の重複は許可しない。
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SlangData"
+
+      responses:
+        "201":
+          description: created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SlangData"
+
+        "400":
+          description: invalid request body / required field missing / duplicate id or slang
+
+        "500":
+          description: failed to save data / internal server error
+
+  /api/slangs/random:
+    get:
+      summary: ランダムスラング取得
+      description: 登録されているスラングデータの中からランダムにスラングデータを取得する。`count` を指定することで、取得するスラング数を選択できる。同一レスポンス内で同じスラングデータは重複して返さない。
+      parameters:
+        - name: count
+          in: query
+          description: 取得したいランダムスラングの数。未指定の場合は1件取得する。
+          required: false
+          schema:
+            type: integer
+            example: 3
+      
+      responses:
+        "200":
+          description: ランダム取得成功
+
+        "400":
+          description: count が不正
+
+        "405":
+          description: GET以外のメソッド
+
+        "500":
+          description: サーバー内部エラー
+
+  /api/slangs:
+    get:
+      summary: スラング一覧取得
+      description: 登録されているスラング一覧を取得する。`limit` と `offset` クエリパラメータで取得件数とスキップ件数を指定可能（ページング対応）
+      parameters:
+        - name: limit
+          in: query
+          description: 取得する件数。最大100。
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            example: 20
+
+        - name: offset
+          in: query
+          description: スキップする件数（先頭から何件飛ばすのか）
+          required: false
+          schema:
+            type: integer
+            minimum: 0
+            example: 0
+      
+      responses:
+        "200":
+          description: スラング一覧取得成功
+
+        "400":
+          description: limit または offset が不正
+
+        "405":
+          description: メソッド不一致
+
+        "500":
+          description: サーバー内部エラー
+
+  /api/slangs/{id}:
+    get:
+      summary: スラング詳細取得
+      description: 指定された `id` に紐づくスラングの詳細情報を1件取得する。
+      parameters:
+        - name: id
+          in: path
+          description: 取得するスラングのID
+          required: true
+          schema:
+            type: string
+            example: "slang_001"
+      
+      responses:
+        "200":
+          description: スラング詳細取得成功
+
+        "404":
+          description: 該当データなし
+
+        "405":
+          description: メソッド不一致
+
+        "500":
+          description: サーバー内部エラー
+
+  /api/slangs/search:
+    get:
+      summary: スラング検索
+      description: 指定された `keyword` と各スラングデータの `slang` の値を比較し、完全一致したスラングデータを取得する。検索対象は `slang` のみとし、`meaning_ja`、`nuance_ja`、`examples` は検索対象に含めない。
+      parameters:
+        - name: keyword
+          in: query
+          description: 検索したいスラング語句
+          required: true
+          schema:
+            type: string
+            example: "lit"
+      
+      responses:
+        "200":
+          description: 検索成功
+
+        "400":
+          description: keyword が未指定
+
+        "500":
+          description: サーバー内部エラー
+
+  /api/slangs/filter:
+    get:
+      summary: 場面、感情検索
+      description: "`scene` または `emotion` の少なくとも一方を指定する。"
+
+      parameters:
+        - name: scene
+          in: query
+          required: false
+          description: 検索したいスラングの使用場面
+          schema:
+            type: string
+            example: sns
+
+        - name: emotion
+          in: query
+          required: false
+          description: 検索したいスラングの感情カテゴリ
+          schema:
+            type: string
+            example: confusion
+
+      responses:
+        "200":
+          description: 検索成功
+
+        "400":
+          description: sceneとemotionの両方が未指定
+
+        "500":
+          description: サーバー内部エラー
+
+  /api/categories/{type}:
+    get:
+      summary: カテゴリ一覧取得
+      description: scenes または emotion_categories を指定し、登録済みスラングから重複を除いたカテゴリ一覧をソートして返す。
+
+      parameters:
+        - name: type
+          in: path
+          required: true
+          description: 取得するカテゴリ種別。scenes または emotion_categories を指定する。
+          schema:
+            type: string
+            enum:
+              - scenes
+              - emotion_categories
+            example: scenes
+
+      responses:
+        "200":
+          description: カテゴリ一覧取得成功
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                example:
+                  - friends
+                  - gaming
+                  - sns
+
+        "400":
+          description: 不正なカテゴリ種別
+
+        "405":
+          description: 許可されていないHTTPメソッド
+
+        "500":
+          description: サーバ内部エラー
+
+  /api/slangs/{id}/related:
+    get:
+      summary: 関連スラング取得
+      description: 指定されたスラングと同じ使用場面または感情カテゴリを持つスラングを関連スラングとして返す。指定されたスラング自身は結果に含めない。
+
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: 関連スラングを取得したいスラングID
+          schema:
+            type: string
+            example: slang_001
+
+      responses:
+        "200":
+          description: 関連スラング取得成功
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/SlangData"
+
+        "400":
+          description: リクエストパスが不正
+
+        "404":
+          description: 指定されたスラングが存在しない
+
+        "405":
+          description: 許可されていないHTTPメソッド
+
+        "500":
+          description: スラングデータの取得に失敗
+
+components:
+  schemas:
+    SlangData:
+      type: object
+      required:
+        - id
+        - slang
+        - meanings
+      properties:
+        id:
+          type: string
+          example: slang_001
+        slang:
+          type: string
+          example: shit
+        meanings:
+          type: array
+          items:
+            $ref: "#/components/schemas/MeaningData"
+
+    MeaningData:
+      type: object
+      properties:
+        meaning_ja:
+          type: string
+          example: 最悪、ひどい
+        nuance_ja:
+          type: string
+          example: 何かを強く否定・批判する時に使う。
+        examples:
+          type: array
+          items:
+            $ref: "#/components/schemas/ExampleData"
+        scene:
+          type: array
+          items:
+            type: string
+          example:
+            - friends
+            - SNS
+        emotion_categories:
+          type: array
+          items:
+            type: string
+          example:
+            - friends
+            - SNS
+        warning_ja:
+          type: string
+          example: かなり下品な表現なので、フォーマルな場面や目上の人には使わない。
+
+    ExampleData:
+      type: object
+      properties:
+        sentence_en:
+          type: string
+          example: This food is shit.
+        sentence_ja:
+          type: string
+          example: この飯まずすぎる。
