@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Slang Dictionary</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>Slang Dictionary</h1>
+        <p>英語スラング辞書</p>
+      </div>
+      <button id="randomButton" type="button">ランダム表示</button>
+    </header>
+
+    <main class="layout">
+      <section class="panel controls">
+        <div class="field">
+          <label for="searchInput">キーワード検索</label>
+          <input id="searchInput" type="search" placeholder="スラングを検索">
+        </div>
+        <div class="field">
+          <label for="sceneSelect">シーン</label>
+          <select id="sceneSelect">
+            <option value="">すべて</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="emotionSelect">感情</label>
+          <select id="emotionSelect">
+            <option value="">すべて</option>
+          </select>
+        </div>
+      </section>
+
+      <section id="randomSection" class="panel random hidden">
+        <div class="sectionHeader">
+          <h2>Random Slang</h2>
+          <button id="closeRandomButton" type="button" aria-label="閉じる">x</button>
+        </div>
+        <div id="randomSlang"></div>
+      </section>
+
+      <section class="contentGrid">
+        <div>
+          <div class="sectionHeader">
+            <h2>Slang List</h2>
+            <span id="resultCount" class="count">0 件</span>
+          </div>
+          <div id="slangList" class="slangList"></div>
+          <div id="loadMore" class="loadMoreWrap hidden">
+            <button id="loadMoreButton" type="button">もっと読み込む</button>
+          </div>
+        </div>
+
+        <aside class="panel formPanel">
+          <h2>スラング追加</h2>
+          <form id="slangForm">
+            <label>
+              <span>ID <span class="required">*</span></span>
+              <input name="id" required placeholder="例: slang_010">
+            </label>
+            <label>
+              <span>Slang <span class="required">*</span></span>
+              <input name="slang" required placeholder="例: bet">
+            </label>
+            <label>
+              <span>意味（日本語）<span class="required">*</span></span>
+              <textarea name="meaning_ja" required rows="2" placeholder="日本語で意味を入力"></textarea>
+            </label>
+            <label>
+              <span>ニュアンス</span>
+              <textarea name="nuance_ja" rows="2" placeholder="使い方のニュアンス"></textarea>
+            </label>
+            <label>
+              <span>例文（英語）</span>
+              <input name="sentence_en" placeholder="例文">
+            </label>
+            <label>
+              <span>例文（日本語）</span>
+              <input name="sentence_ja" placeholder="例文の訳">
+            </label>
+            <label>
+              <span>シーン</span>
+              <input name="scene" placeholder="friends, sns（カンマ区切り）">
+            </label>
+            <label>
+              <span>感情</span>
+              <input name="emotion" placeholder="joy, excited（カンマ区切り）">
+            </label>
+            <label>
+              <span>注意事項</span>
+              <textarea name="warning_ja" rows="2" placeholder="使用上の注意"></textarea>
+            </label>
+            <button type="submit">追加する</button>
+            <p id="formMessage" class="formMessage" role="status"></p>
+          </form>
+        </aside>
+      </section>
+    </main>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

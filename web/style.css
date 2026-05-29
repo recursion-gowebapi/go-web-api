@@ -1,0 +1,296 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f7f2;
+  --panel: #ffffff;
+  --ink: #1f2933;
+  --muted: #667085;
+  --line: #d8ded2;
+  --accent: #0f766e;
+  --accent-strong: #115e59;
+  --warn: #b45309;
+  --warn-bg: #fff7ed;
+  --shadow: 0 10px 28px rgba(31, 41, 51, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  min-height: 42px;
+  padding: 0 16px;
+}
+
+button:hover {
+  background: var(--accent-strong);
+}
+
+.topbar {
+  align-items: center;
+  background: #172026;
+  color: white;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  padding: 28px clamp(16px, 5vw, 56px);
+}
+
+.topbar h1 {
+  cursor: pointer;
+  font-size: clamp(28px, 5vw, 48px);
+  line-height: 1;
+  margin: 0 0 8px;
+}
+
+.topbar p {
+  color: #d5ded7;
+  margin: 0;
+}
+
+.layout {
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 24px clamp(16px, 4vw, 32px) 48px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.controls {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 2fr 1fr 1fr;
+  margin-bottom: 20px;
+  padding: 16px;
+}
+
+.field,
+form label {
+  display: grid;
+  gap: 7px;
+}
+
+label {
+  color: #344054;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.required {
+  color: #c2410c;
+}
+
+input,
+select,
+textarea {
+  background: white;
+  border: 1px solid #cbd5c0;
+  border-radius: 6px;
+  color: var(--ink);
+  min-height: 42px;
+  padding: 9px 11px;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.contentGrid {
+  align-items: start;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) 360px;
+}
+
+.sectionHeader {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.sectionHeader h2 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.count {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.slangList {
+  display: grid;
+  gap: 14px;
+}
+
+.slangCard {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.slangCard h3 {
+  font-size: 24px;
+  margin: 0 0 12px;
+}
+
+.meaning + .meaning {
+  border-top: 1px solid var(--line);
+  margin-top: 14px;
+  padding-top: 14px;
+}
+
+.meaningJa {
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.nuance {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 8px;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.pill {
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 9px;
+}
+
+.pill-scene {
+  background: #e9f5f1;
+  border: 1px solid #b9dcd1;
+  color: #164e48;
+}
+
+.pill-emotion {
+  background: #f0eeff;
+  border: 1px solid #c4b8f8;
+  color: #3730a3;
+}
+
+.warning {
+  background: var(--warn-bg);
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  color: var(--warn);
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 12px;
+  padding: 9px 10px;
+}
+
+.example {
+  color: #475467;
+  font-size: 14px;
+  margin: 2px 0;
+}
+
+.random {
+  margin-bottom: 20px;
+  padding: 16px;
+}
+
+.hidden {
+  display: none;
+}
+
+#closeRandomButton {
+  background: #e5e7eb;
+  color: #111827;
+  min-height: 34px;
+  padding: 0 12px;
+}
+
+.formPanel {
+  padding: 18px;
+}
+
+.formPanel h2 {
+  font-size: 22px;
+  margin: 0 0 14px;
+}
+
+form {
+  display: grid;
+  gap: 13px;
+}
+
+.formMessage {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
+  min-height: 20px;
+}
+
+.loadMoreWrap {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.empty,
+.error {
+  background: white;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  padding: 20px;
+}
+
+.error {
+  border-color: #fca5a5;
+  color: #b91c1c;
+}
+
+@media (max-width: 860px) {
+  .topbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .controls,
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .formPanel {
+    position: static;
+  }
+}
