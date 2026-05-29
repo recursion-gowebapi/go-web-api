@@ -2,6 +2,7 @@ package store
 
 import (
 	"encoding/json"
+	"math/rand"
 	"os"
 	"fmt"
 	"strings"
@@ -24,6 +25,24 @@ func GetSlangs() ([]models.Slang, error) {
 }
 
 func GetSlangByID(id string) (*models.Slang, error) {
+	slangs, err := GetSlangs()
+	if err != nil {
+		return nil, err
+	}
+	for _, slang := range slangs {
+		if slang.ID == id {
+			return &slang, nil
+		}
+	}
+	return nil, nil
+}
+
+// stringの小文字化, 空白削除用関数
+func normalizeText(text string) string {
+	return strings.ToLower(strings.TrimSpace(text))
+}
+
+func SearchSlangs(keyword string) ([]models.Slang, error) {
 	// データ取得
 	slangs, err := GetSlangs()
 	if err != nil {
@@ -59,4 +78,37 @@ func SearchSlangs(keyword string) ([]models.Slang, error) {
 	}
 
 	return results, nil
+}
+
+func RandomSlangs(count int) ([]models.Slang, error) {
+	// データ取得
+	slangs, err := GetSlangs()
+	if err != nil {
+		return nil, err
+	}
+
+	// countの上限をスラング配列の長さに設定
+	if count > len(slangs) {
+		count = len(slangs)
+	}
+
+	// スラング配列をシャッフル
+	rand.Shuffle(len(slangs), func(i, j int) {
+		slangs[i], slangs[j] = slangs[j], slangs[i]
+	})
+
+	// count件取得
+	results := slangs[:count]
+
+	return results, nil
+}
+
+//jsonファイルの書き換え
+func Save(slangs []models.Slang) error {
+	data, err := json.MarshalIndent(slangs, "", "  ")
+	if err != nil {
+		return err
+	}
+
+	return os.WriteFile("data/slangs.json", data, 0644)
 }
