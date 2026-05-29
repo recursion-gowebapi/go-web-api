@@ -1,17 +1,27 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 
 	"github.com/recursion-gowebapi/go-web-api/handlers"
 )
 
-func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintln(w, "Go Web API is running")
+func withCORS(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+		if r.Method == http.MethodOptions {
+			w.WriteHeader(http.StatusNoContent)
+			return
+		}
+		next.ServeHTTP(w, r)
 	})
+}
+
+func main() {
+	http.Handle("/", http.FileServer(http.Dir("web")))
 
 	http.HandleFunc("/api/slangs", handlers.SlangsHandler)
 	http.HandleFunc("/api/slangs/search", handlers.SearchSlangsHandler)
@@ -21,5 +31,5 @@ func main() {
 	http.HandleFunc("/api/slangs/add", handlers.CreateSlang)
 
 	log.Println("Server started at http://localhost:8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(":8080", withCORS(http.DefaultServeMux)))
 }

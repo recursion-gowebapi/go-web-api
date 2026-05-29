@@ -91,10 +91,10 @@ func TestValidCategoryType_NG(t *testing.T) {
 func TestUniqueCategories_Empty(t *testing.T) {
 	slangs := []models.Slang{}
 
-	var expected = []string{}
 	result := getUniqueCategories(slangs, "scenes")
-	if !reflect.DeepEqual(result, expected) {
-		t.Errorf("expected %v, got %v", expected, result)
+
+	if len(result) != 0 {
+		t.Errorf("expected empty result, got %v", result)
 	}
 }
 
