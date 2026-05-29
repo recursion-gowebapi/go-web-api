@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"math/rand"
 	"os"
-	"fmt"
 	"strings"
 
 	"github.com/recursion-gowebapi/go-web-api/models"
@@ -43,29 +42,13 @@ func normalizeText(text string) string {
 }
 
 func SearchSlangs(keyword string) ([]models.Slang, error) {
-	// データ取得
 	slangs, err := GetSlangs()
+
 	if err != nil {
 		return nil, err
 	}
 
-	for _, slang := range slangs {
-		if slang.ID == id {
-			return &slang, nil
-		}
-	}
-
-	return nil, fmt.Errorf("slang not found")
-}
-
-func SearchSlangs(keyword string) ([]models.Slang, error) {
-  slangs, err := GetSlangs()
-  
-  if err != nil {
-    return nil, err
-  }
-  
-  normalizedKeyword := normalizeText(keyword)
+	normalizedKeyword := normalizeText(keyword)
 
 	results := []models.Slang{}
 
@@ -103,7 +86,7 @@ func RandomSlangs(count int) ([]models.Slang, error) {
 	return results, nil
 }
 
-//jsonファイルの書き換え
+// jsonファイルの書き換え
 func Save(slangs []models.Slang) error {
 	data, err := json.MarshalIndent(slangs, "", "  ")
 	if err != nil {

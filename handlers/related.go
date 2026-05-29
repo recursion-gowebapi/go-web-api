@@ -30,7 +30,7 @@ func GetRelatedSlangs(w http.ResponseWriter, r *http.Request) {
 	// id に対応するスラングの取得
 	slang, err := store.GetSlangByID(idStr)
 
-	if err != nil {
+	if err != nil || slang == nil {
 		respondWithError(w, http.StatusNotFound, "slang not found")
 		return
 	}
