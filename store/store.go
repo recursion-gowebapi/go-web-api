@@ -42,18 +42,16 @@ func normalizeText(text string) string {
 }
 
 func SearchSlangs(keyword string) ([]models.Slang, error) {
-	// データ取得
 	slangs, err := GetSlangs()
+
 	if err != nil {
 		return nil, err
 	}
 
-	// keywordを小文字化, 空白削除
 	normalizedKeyword := normalizeText(keyword)
 
 	results := []models.Slang{}
 
-	// slangを小文字化, 空白削除し検索
 	for _, slang := range slangs {
 		normalizedSlang := normalizeText(slang.Slang)
 
@@ -88,7 +86,7 @@ func RandomSlangs(count int) ([]models.Slang, error) {
 	return results, nil
 }
 
-//jsonファイルの書き換え
+// jsonファイルの書き換え
 func Save(slangs []models.Slang) error {
 	data, err := json.MarshalIndent(slangs, "", "  ")
 	if err != nil {
