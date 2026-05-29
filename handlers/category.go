@@ -1,13 +1,13 @@
 package handlers
 
-
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/recursion-gowebapi/go-web-api/models"
 	"github.com/recursion-gowebapi/go-web-api/store"
 	"net/http"
-	"strings"
 	"sort"
+	"strings"
 )
 
 // 共通のメソッドチェック関数
@@ -16,7 +16,7 @@ func methodCheck(w http.ResponseWriter, r *http.Request, allowedMethod string) b
 		w.Header().Set("Allow", allowedMethod)
 		respondWithError(w, http.StatusMethodNotAllowed, "method not allowed")
 		return false
-	} 
+	}
 	return true
 }
 
@@ -36,10 +36,9 @@ func validateCategoryType(w http.ResponseWriter, r *http.Request, validParams []
 	return "", fmt.Errorf("invalid category type")
 }
 
-
 func getUniqueCategories(slangs []models.Slang, categoryType string) []string {
 	uniqueCategories := make(map[string]struct{})
-	
+
 	for _, slang := range slangs {
 		for _, meaning := range slang.Meanings {
 			var targets []string
@@ -49,7 +48,7 @@ func getUniqueCategories(slangs []models.Slang, categoryType string) []string {
 			} else {
 				targets = meaning.EmotionCategories
 			}
-			
+
 			for _, item := range targets {
 				uniqueCategories[item] = struct{}{}
 			}
@@ -61,11 +60,10 @@ func getUniqueCategories(slangs []models.Slang, categoryType string) []string {
 	for key := range uniqueCategories {
 		result = append(result, key)
 	}
-	
+
 	sort.Strings(result)
 	return result
 }
-
 
 // GET /api/categories/{scenes or emotion_categories}
 func ReturnCategoriesHandler(w http.ResponseWriter, r *http.Request) {
@@ -95,4 +93,3 @@ func ReturnCategoriesHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(result)
 }
-
