@@ -5,8 +5,7 @@
 このアプリ・プログラムが何をするものかを1〜3文で説明。
 
 ## Demo / Screenshot
-
-![Image from Gyazo](https://i.gyazo.com/fce8c6e444c50d4dfe36d4e413cd3b75.gif)
+![](https://github.com/user-attachments/assets/dd07a678-dbac-4fe2-bc80-b72c8d05c9bf)
 
 ## Features
 
@@ -14,27 +13,28 @@
 
 ## Tech Stack
 
-  ![Go](https://img.shields.io/badge/Go-1.25-00ADD8?logo=go&logoColor=white)
-  ![HTML](https://img.shields.io/badge/HTML-5-E34F26?logo=html5&logoColor=white)
-  ![CSS](https://img.shields.io/badge/CSS-3-1572B6?logo=css3&logoColor=white)
-  ![JavaScript](https://img.shields.io/badge/JavaScript-ES2023-F7DF1E?logo=javascript&logoColor=white)
+![Go](https://img.shields.io/badge/Go-1.25-00ADD8?logo=go&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML-5-E34F26?logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES2023-F7DF1E?logo=javascript&logoColor=white)
   
 ## Setup
 
-  **必要環境**
-  - Go 1.25以上
+**必要環境**
+- Go 1.25以上
 
-  **手順**
-
-  1. リポジトリをクローン
-     git clone https://github.com/recursion-gowebapi/go-web-api.git
-     cd go-web-api
-
-  2. サーバーを起動
-     go run .
-
-  3. ブラウザで開く
-     http://localhost:8080
+**手順**
+1. リポジトリをクローン
+```
+git clone https://github.com/recursion-gowebapi/go-web-api.git
+cd go-web-api
+```
+2. サーバーを起動
+```
+go run .
+```
+3. ブラウザで開く <br/>
+http://localhost:8080
 
 ## Usage
 
