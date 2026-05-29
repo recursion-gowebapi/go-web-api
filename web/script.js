@@ -71,12 +71,24 @@ function buildSlangCard(slang) {
         pill.className = "pill pill-scene";
         pill.textContent = tag;
         meta.appendChild(pill);
+
+        pill.addEventListener("click", () => {
+          sceneSelect.value = tag;
+          searchInput.value = "";
+          refreshList();
+        });
       });
       emotions.forEach((tag) => {
         const pill = document.createElement("span");
         pill.className = "pill pill-emotion";
         pill.textContent = tag;
         meta.appendChild(pill);
+
+        pill.addEventListener("click", () => {
+          emotionSelect.value = tag;
+          searchInput.value = "";
+          refreshList();
+        });
       });
       meaningEl.appendChild(meta);
     }
@@ -91,6 +103,35 @@ function buildSlangCard(slang) {
     article.appendChild(meaningEl);
   }
 
+  const relatedBtn = document.createElement("button");
+  relatedBtn.type = "button";
+  relatedBtn.className = "relatedButton";
+  relatedBtn.textContent = "関連スラングを見る";
+
+  const relatedArea = document.createElement("div");
+  relatedArea.className = "relatedArea hidden";
+
+  let relatedLoaded = false;
+
+  relatedBtn.addEventListener("click", () => {
+    const isOpen = !relatedArea.classList.contains("hidden");
+    if (isOpen) {
+      // 閉じる
+      relatedArea.classList.add("hidden");
+      relatedBtn.textContent = "関連スラングを見る";
+    } else {
+      // 開く（初回のみ fetch）
+      relatedArea.classList.remove("hidden");
+      relatedBtn.textContent = "関連スラングを閉じる";
+      if (!relatedLoaded) {
+        relatedLoaded = true;
+        loadRelatedSlangs(slang.id, relatedArea);
+      }
+    }
+  });
+
+  article.appendChild(relatedBtn);
+  article.appendChild(relatedArea);
   return article;
 }
 
@@ -185,6 +226,22 @@ async function filterSlangs() {
     items.forEach((s) => listEl.appendChild(buildSlangCard(s)));
   } catch (err) {
     listEl.innerHTML = `<div class="error">${err.message}</div>`;
+  }
+}
+
+async function loadRelatedSlangs(slangId, container) {
+  container.innerHTML = `<p class="nuance">読み込み中...</p>`;
+  try {
+    const data = await fetchJSON(`/api/slangs/${slangId}/related`);
+    container.innerHTML = "";
+    const items = data.items || data || [];   // レスポンス形式に合わせて調整
+    if (items.length === 0) {
+      container.innerHTML = `<p class="nuance">関連スラングはありません。</p>`;
+      return;
+    }
+    items.forEach((s) => container.appendChild(buildSlangCard(s)));
+  } catch (err) {
+    container.innerHTML = `<div class="error">${err.message}</div>`;
   }
 }
 
