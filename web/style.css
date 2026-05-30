@@ -294,3 +294,33 @@ form {
     position: static;
   }
 }
+
+/* 関連スラングボタン */
+.relatedButton {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 14px;
+  min-height: 34px;
+  padding: 0 12px;
+}
+
+.relatedButton:hover {
+  background: #e9f5f1;
+  color: var(--accent-strong);
+}
+
+/* 展開エリア */
+.relatedArea {
+  border-top: 1px dashed var(--line);
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 14px;
+}
+
+.relatedArea .slangCard {
+  background: var(--bg);   /* 入れ子とわかるよう背景を一段暗く */
+}
