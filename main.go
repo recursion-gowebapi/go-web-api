@@ -29,6 +29,8 @@ func main() {
 	http.HandleFunc("/api/slangs/filter", handlers.Filter)
 	http.HandleFunc("/api/slangs/random", handlers.RandomSlangsHandler)
 	http.HandleFunc("/api/slangs/add", handlers.CreateSlang)
+	http.HandleFunc("/api/categories/", handlers.ReturnCategoriesHandler)
+	http.HandleFunc("/api/slangs/", handlers.GetRelatedSlangs)
 
 	log.Println("Server started at http://localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", withCORS(http.DefaultServeMux)))
