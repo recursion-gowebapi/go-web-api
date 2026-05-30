@@ -11,15 +11,15 @@ Native Slang API は、日本人英語学習者向けの英語スラング辞書
 
 ## Features
 
-スラング一覧取得
-スラング詳細取得
-キーワード検索
-使用場面（scene）による検索
-感情カテゴリ（emotion）による検索
-ランダムスラング取得
-関連スラング取得
-カテゴリ一覧取得
-新規スラング登録
+- スラング一覧取得
+- スラング詳細取得
+- キーワード検索
+- 使用場面（scene）による検索
+- 感情カテゴリ（emotion）による検索
+- ランダムスラング取得
+- 関連スラング取得
+- カテゴリ一覧取得
+- 新規スラング登録
 
 ## Tech Stack
 
@@ -50,7 +50,8 @@ http://localhost:8080
 
 API 仕様は OpenAPI (Swagger) 形式で管理しています。
 
-docs/swagger.yaml
+- GitHub Pages: https://recursion-gowebapi.github.io/go-web-api/
+- OpenAPI file: `docs/swagger.yaml`
 
 Swagger Editor に読み込むことで、エンドポイントやリクエスト・レスポンス仕様を確認できます。
 
